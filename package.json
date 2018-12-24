@@ -1,0 +1,26 @@
+{
+  "name": "js-ds",
+  "version": "1.0.0",
+  "description": "Data Structures in Javascript",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meidan-zemer/js-ds.git"
+  },
+  "author": "Meidan Zemer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meidan-zemer/js-ds/issues"
+  },
+  "homepage": "https://github.com/meidan-zemer/js-ds#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2"
+  }
+}
