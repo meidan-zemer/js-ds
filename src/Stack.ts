@@ -1,4 +1,4 @@
-import { IStack } from './IStack';
+import { IStack } from './Interfaces';
 
 class Stack implements IStack {
   private stack: any[];

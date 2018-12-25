@@ -1,4 +1,4 @@
-import {IStack} from '../src/IStack';
+import {IStack} from '../src/Interfaces';
 import Stack from '../src/Stack';
 
 test("Testing Stack", () => {
