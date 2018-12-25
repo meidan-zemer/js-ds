@@ -1,7 +1,5 @@
-interface IStack {
-    push: Function
-    pop: Function
-    clear: Function
+export interface IStack {
+  push(obj: any): void;
+  pop(): any;
+  clear(): void;
 }
-
-export default IStack;

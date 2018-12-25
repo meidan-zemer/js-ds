@@ -1,8 +1,7 @@
-import IStack from '../src/IStack';
+import {IStack} from '../src/IStack';
 import Stack from '../src/Stack';
 
-test("Testing Stack", ()=>{
-
+test("Testing Stack", () => {
     let stack : IStack = new Stack();
     stack.push(1);
     stack.push(2);
