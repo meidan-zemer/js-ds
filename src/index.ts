@@ -1,5 +1,4 @@
+import List from './List';
 import Stack from './Stack';
 
-export{
-    Stack
-};
+export { List, Stack };
