@@ -18,7 +18,7 @@ class List implements IList {
     if (oldHead) {
       oldHead.setPrev(newHead);
     }
-    if (oldHead === this._tail) {
+    if (this.count() === 0) {
       this._tail = newHead;
     }
     this._count++;
@@ -33,7 +33,7 @@ class List implements IList {
     if (oldTail) {
       oldTail.setNext(newTail);
     }
-    if (oldTail === this._head) {
+    if (this.count() === 0) {
       this._head = newTail;
     }
     this._count++;
@@ -42,6 +42,7 @@ class List implements IList {
   public clear(): IList {
     this._tail = null;
     this._head = null;
+    this._count = 0;
     return this;
   }
   public head(): any {
@@ -74,38 +75,46 @@ class List implements IList {
     return item ? item.value() : null;
   }
   public addAfter(index: number, obj: any): IList {
-    const item = this.getItem(index);
-    if (item) {
-      const newItem = new ListItem(obj);
-      const nextItem = item.next();
-      newItem.setNext(nextItem);
-      newItem.setPrev(item);
-      item.setNext(newItem);
-      if (nextItem) {
-        nextItem.setPrev(newItem);
+    if (index >= this.count()) {
+      this.addTail(obj);
+    } else {
+      const item = this.getItem(index);
+      if (item) {
+        const newItem = new ListItem(obj);
+        const nextItem = item.next();
+        newItem.setNext(nextItem);
+        newItem.setPrev(item);
+        item.setNext(newItem);
+        if (nextItem) {
+          nextItem.setPrev(newItem);
+        }
+        if (nextItem === null) {
+          this._tail = newItem;
+        }
+        this._count++;
       }
-      if (nextItem === null) {
-        this._tail = newItem;
-      }
-      this._count++;
     }
     return this;
   }
   public addBefore(index: number, obj: any): IList {
-    const item = this.getItem(index);
-    if (item) {
-      const newItem = new ListItem(obj);
-      const prevItem = item.prev();
-      newItem.setNext(item);
-      newItem.setPrev(prevItem);
-      item.setPrev(newItem);
-      if (prevItem) {
-        prevItem.setNext(newItem);
+    if (index <= 0) {
+      this.addHead(obj);
+    } else {
+      const item = this.getItem(index);
+      if (item) {
+        const newItem = new ListItem(obj);
+        const prevItem = item.prev();
+        newItem.setNext(item);
+        newItem.setPrev(prevItem);
+        item.setPrev(newItem);
+        if (prevItem) {
+          prevItem.setNext(newItem);
+        }
+        if (prevItem === null) {
+          this._head = newItem;
+        }
+        this._count++;
       }
-      if (prevItem === null) {
-        this._head = newItem;
-      }
-      this._count++;
     }
     return this;
   }

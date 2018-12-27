@@ -8,7 +8,7 @@
     "test": "jest",
     "compile": "tsc",
     "webpack":"webpack",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" \"tests/**/*.ts\"",
     "lint": "tslint -p tsconfig.json"
   },
   "repository": {

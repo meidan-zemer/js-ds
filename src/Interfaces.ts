@@ -15,6 +15,7 @@ export interface IList {
   addAfter(index: number, obj: any): IList;
   addBefore(index: number, obj: any): IList;
   count(): number;
+  [Symbol.iterator](): { next: () => { done: boolean; value: any } };
 }
 
 export interface IQueue {
